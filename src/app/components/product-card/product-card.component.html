@@ -1,0 +1,59 @@
+<article class="product-card">
+
+  <!-- Product Image -->
+  <a
+    [routerLink]="['/product', product.id]"
+    class="image-link"
+  >
+    <div class="image-wrapper">
+
+      <img
+        [src]="product.image"
+        [alt]="product.name"
+      />
+
+      <span
+        *ngIf="!product.available"
+        class="stock-badge"
+      >
+        Out of Stock
+      </span>
+
+    </div>
+  </a>
+
+  <!-- Product Information -->
+  <div class="product-info">
+
+    <span class="category">
+      {{ product.category }}
+    </span>
+
+    <h3>
+      <a [routerLink]="['/product', product.id]">
+        {{ product.name }}
+      </a>
+    </h3>
+
+    <p class="description">
+      {{ product.description }}
+    </p>
+
+    <div class="product-bottom">
+
+      <span class="price">
+        ₹{{ product.price }}
+      </span>
+
+      <a
+        [routerLink]="['/product', product.id]"
+        class="view-button"
+      >
+        View Details
+      </a>
+
+    </div>
+
+  </div>
+
+</article>

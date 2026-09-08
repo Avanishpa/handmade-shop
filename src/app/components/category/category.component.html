@@ -1,0 +1,102 @@
+<!-- ================= CATEGORY HEADER ================= -->
+
+<section class="category-header">
+
+  <div class="container">
+
+    <a
+      routerLink="/"
+      class="back-link"
+    >
+      ← Back to Home
+    </a>
+
+    <p class="section-label">
+      OUR COLLECTION
+    </p>
+
+    <h1>
+      {{ categoryName }}
+    </h1>
+
+    <p>
+      Explore our beautiful handmade
+      {{ categoryName.toLowerCase() }} collection.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products-section">
+
+  <div class="container">
+
+    <!-- Products Found -->
+
+    <div
+      class="products-top"
+      *ngIf="products.length > 0"
+    >
+
+      <h2>
+        {{ categoryName }} Collection
+      </h2>
+
+      <span>
+        {{ products.length }} Products
+      </span>
+
+    </div>
+
+
+    <!-- Product Grid -->
+
+    <div
+      class="product-grid"
+      *ngIf="products.length > 0"
+    >
+
+      <app-product-card
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-card>
+
+    </div>
+
+
+    <!-- No Products -->
+
+    <div
+      class="empty-state"
+      *ngIf="products.length === 0"
+    >
+
+      <div class="empty-icon">
+        ♡
+      </div>
+
+      <h2>
+        No Products Found
+      </h2>
+
+      <p>
+        There are currently no products
+        available in this category.
+      </p>
+
+      <a
+        routerLink="/"
+        class="home-button"
+      >
+        Back to Home
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

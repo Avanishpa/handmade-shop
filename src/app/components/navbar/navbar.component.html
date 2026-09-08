@@ -1,0 +1,101 @@
+<nav class="navbar">
+
+  <div class="navbar-container">
+
+    <!-- Logo -->
+    <a routerLink="/" class="logo">
+      Handmade
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="nav-links">
+
+      <a routerLink="/" routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: true }">
+        Home
+      </a>
+
+      <a routerLink="/category/embroidery"
+         routerLinkActive="active">
+        Embroidery
+      </a>
+
+      <a routerLink="/category/kurti"
+         routerLinkActive="active">
+        Kurti
+      </a>
+
+      <a routerLink="/category/blouse"
+         routerLinkActive="active">
+        Blouse
+      </a>
+
+      <a routerLink="/category/crochet"
+         routerLinkActive="active">
+        Crochet
+      </a>
+      <a routerLink="/category/hairaccessories"
+         routerLinkActive="active">
+        Hair Accessories
+      </a>
+
+      <a routerLink="/category/other"
+         routerLinkActive="active">
+        Other
+      </a>
+
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      class="menu-button"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+
+    <a routerLink="/"
+       (click)="closeMenu()">
+      Home
+    </a>
+
+    <a routerLink="/category/embroidery"
+       (click)="closeMenu()">
+      Embroidery
+    </a>
+
+    <a routerLink="/category/kurti"
+       (click)="closeMenu()">
+      Kurti
+    </a>
+
+    <a routerLink="/category/blouse"
+       (click)="closeMenu()">
+      Blouse
+    </a>
+
+    <a routerLink="/category/crochet"
+       (click)="closeMenu()">
+      Crochet
+    </a>
+<a routerLink="/category/hairaccessories"
+       (click)="closeMenu()">
+      Hair Accessories
+    </a>
+    <a routerLink="/category/other"
+       (click)="closeMenu()">
+      Other
+    </a>
+
+  </div>
+
+</nav>

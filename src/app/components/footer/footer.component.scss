@@ -1,0 +1,129 @@
+.footer {
+  background: #222;
+  color: #fff;
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 70px 20px 50px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 50px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-column p {
+  margin: 0 0 15px;
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-column h3 {
+  margin: 0 0 20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.footer-column > a:not(.footer-logo):not(.whatsapp-link):not(.contact-link) {
+  margin-bottom: 12px;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-column > a:hover {
+  color: #f1c3a1;
+}
+
+.whatsapp-link {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 11px 16px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.whatsapp-link:hover {
+  background: #1ebe5d;
+}
+
+.contact-link {
+  color: #f1c3a1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+
+  border-top: 1px solid #3a3a3a;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #888;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 50px 20px 35px;
+  }
+
+  .footer-logo {
+    font-size: 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}

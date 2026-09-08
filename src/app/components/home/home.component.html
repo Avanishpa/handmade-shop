@@ -1,0 +1,154 @@
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+  <img
+    src="assets/images/saree-1.jpg"
+    alt="Handmade collection"
+    class="hero-image"
+  />
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <p class="hero-small-title">
+      HANDCRAFTED WITH LOVE
+    </p>
+
+    <h1>
+      Beautiful Handmade
+      <span>Creations</span>
+    </h1>
+
+    <p class="hero-description">
+      Discover unique handmade embroidery, kurtis,
+      blouses, crochet and more.
+    </p>
+
+    <a
+      routerLink="/category/embroidery"
+      class="hero-button"
+    >
+      Explore Collection
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section categories-section">
+
+  <div class="section-heading">
+
+    <p class="section-label">
+      EXPLORE
+    </p>
+
+    <h2>
+      Shop by Category
+    </h2>
+
+    <p>
+      Find something beautiful from our handmade collection.
+    </p>
+
+  </div>
+
+
+  <div class="category-grid">
+
+    <a
+      *ngFor="let category of categories"
+      [routerLink]="['/category', category.slug]"
+      class="category-card"
+    >
+
+      <img
+        [src]="category.image"
+        [alt]="category.name"
+      />
+
+      <div class="category-overlay">
+
+        <h3>
+          {{ category.name }}
+        </h3>
+
+        <span>
+          View Collection →
+        </span>
+
+      </div>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FEATURED PRODUCTS ================= -->
+
+<section class="section products-section">
+
+  <div class="section-heading">
+
+    <p class="section-label">
+      OUR COLLECTION
+    </p>
+
+    <h2>
+      Featured Products
+    </h2>
+
+    <p>
+      Explore some of our beautiful handmade products.
+    </p>
+
+  </div>
+
+
+  <div class="product-grid">
+
+    <app-product-card
+      *ngFor="let product of featuredProducts"
+      [product]="product"
+    ></app-product-card>
+
+  </div>
+
+</section>
+
+
+<!-- ================= BOTTOM CTA ================= -->
+
+<section class="bottom-cta">
+
+  <div>
+
+    <p class="section-label">
+      HANDMADE COLLECTION
+    </p>
+
+    <h2>
+      Made with creativity, care and love.
+    </h2>
+
+    <p>
+      Explore our collection and find something special.
+    </p>
+
+    <a
+      routerLink="/category/crochet"
+      class="cta-button"
+    >
+      Explore Products
+    </a>
+
+  </div>
+
+</section>

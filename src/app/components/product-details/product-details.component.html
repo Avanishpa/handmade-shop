@@ -1,0 +1,143 @@
+<!-- ================= PRODUCT DETAILS ================= -->
+
+<section
+  class="details-section"
+  *ngIf="product"
+>
+
+  <div class="details-container">
+
+    <!-- Back -->
+
+    <a
+      [routerLink]="['/category', product.category]"
+      class="back-link"
+    >
+      ← Back to {{ product.category }}
+    </a>
+
+
+    <div class="product-details">
+
+      <!-- Product Image -->
+
+      <div class="product-image">
+
+        <img
+          [src]="product.image"
+          [alt]="product.name"
+        />
+
+      </div>
+
+
+      <!-- Product Information -->
+
+      <div class="product-info">
+
+        <span class="category">
+          {{ product.category }}
+        </span>
+
+        <h1>
+          {{ product.name }}
+        </h1>
+
+        <div class="price">
+          ₹{{ product.price }}
+        </div>
+
+        <div class="divider"></div>
+
+        <h3>
+          Description
+        </h3>
+
+        <p class="description">
+          {{ product.description }}
+        </p>
+
+
+        <!-- Product Information -->
+
+        <div class="product-meta">
+
+          <div>
+            <span>Product ID</span>
+            <strong>#{{ product.id }}</strong>
+          </div>
+
+          <div>
+            <span>Availability</span>
+
+            <strong
+              [class.available]="product.available"
+              [class.unavailable]="!product.available"
+            >
+              {{ product.available ? 'Available' : 'Out of Stock' }}
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- WhatsApp Button -->
+
+        <button
+          type="button"
+          class="whatsapp-button"
+          [disabled]="!product.available"
+          (click)="orderOnWhatsApp()"
+        >
+
+          <span class="whatsapp-icon">
+            ☎
+          </span>
+
+          {{
+            product.available
+              ? 'Order on WhatsApp'
+              : 'Currently Unavailable'
+          }}
+
+        </button>
+
+
+        <p class="order-note">
+          Click the button to order this product
+          directly on WhatsApp.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRODUCT NOT FOUND ================= -->
+
+<section
+  class="not-found"
+  *ngIf="!product"
+>
+
+  <h2>
+    Product Not Found
+  </h2>
+
+  <p>
+    Sorry, the product you are looking for does not exist.
+  </p>
+
+  <a
+    routerLink="/"
+    class="home-button"
+  >
+    Back to Home
+  </a>
+
+</section>
